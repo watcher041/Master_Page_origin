@@ -6,6 +6,7 @@
     padding:80px;
     margin:60px;
     background-color: white;
+    position: relative;
   &-title {
     > h2 {
       font-size: 50px;
@@ -18,11 +19,23 @@
       width:50%;
     > .field {
         width:100%;
-      & input {
+      & input,textarea {
         width:100%;
         font-size:30px;
         padding:10px;
         margin-bottom: 30px;
+      }
+     &-image {
+         height:0px;
+       > label{
+          position: absolute;
+          left:13%;
+          @include image_base_size;
+          border:1px dotted;
+       }
+       & input {
+          display: none;
+        }
       }
     }
     & input[type="submit"] {

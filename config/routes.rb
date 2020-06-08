@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   # 分野関連パス
   resources :fields, only: [:index]
 
+  # 投稿記事関連
+  resources :posts
+
 end
