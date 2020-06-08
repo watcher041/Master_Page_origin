@@ -1,0 +1,55 @@
+
+
+* {
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.flash {
+    text-align: center;
+    vertical-align: middle;
+    font-size:20px;
+  > .notice {
+    background-color: lightblue;
+  }
+  > .alert {
+    background-color: lightcoral;
+  }
+}
+
+._header {
+    height:100px;
+    width:100%;
+    background-color: white;
+    @include position_center;
+    justify-content: space-around;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+    position:fixed;
+  > h1 {
+    font-size: 40px;
+  }
+  & ul {
+      display: flex;
+      justify-content: space-around;
+    > li {
+        margin-right:20px;
+    }
+  }
+  &-block {
+    height:100px;
+    width:100%;
+  }
+}
+
+.contents {
+  box-shadow: 0 0 10px rgba(0,0,1.0,1.0);
+  background-color: white;
+  margin:50px 10%;
+  padding:50px;
+  > h2 {
+    font-size:40px;
+    text-align: center;
+    border-bottom: 5px groove;
+    font-weight: bold;
+  }
+}

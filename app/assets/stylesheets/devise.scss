@@ -1,0 +1,38 @@
+
+.devise_common {
+    display: flex;
+    border:5px groove;
+    justify-content: space-around;
+    padding:80px;
+    margin:60px;
+    background-color: white;
+  &-title {
+    > h2 {
+      font-size: 50px;
+      margin-bottom:30px;
+    }
+  }
+  > form {
+      @include position-center;
+      flex-direction: column;
+      width:50%;
+    > .field {
+        width:100%;
+      & input {
+        width:100%;
+        font-size:30px;
+        padding:10px;
+        margin-bottom: 30px;
+      }
+    }
+    & input[type="submit"] {
+      border: none;
+      background-color: lightskyblue;
+      border-radius: 50px;
+      font-size:20px;
+      padding:10px 30px;
+    }
+  }
+}
+
+
