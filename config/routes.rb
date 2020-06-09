@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   # 分野関連パス
-  resources :fields, only: [:index]
+  resources :fields, only: [:index,:show]
 
   # 投稿記事関連
   resources :posts

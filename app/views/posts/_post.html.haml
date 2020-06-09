@@ -1,0 +1,28 @@
+
+
+= javascript_pack_tag 'add_field_select'
+= javascript_pack_tag 'add_file'
+
+- if @post.errors.any?
+  .error
+    - post.errors.full_messages.each do |error|
+      %p= error
+= form_with(model: @post, local: true) do |f|
+  .field  
+    = f.label :title
+    %br
+    = f.text_field :title, placeholder: "Title"
+  .field
+    = f.label :file
+    %br
+    = f.file_field :file, direct_upload: true,id: "file_get_field"
+  .field
+    = f.label :text
+    %br
+    = f.text_area :text, placeholder: "detail" ,rows: 10
+  .field 
+    = f.label :field
+    .field_form
+      = f.collection_select(:field_id, Field.where(ancestry:nil), :id, :name, {include_blank: "選択してください"},{ class: "field_list", require: true })
+  = f.submit "SEND"
+
