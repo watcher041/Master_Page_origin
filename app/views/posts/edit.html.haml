@@ -1,5 +1,6 @@
 
-.posts_edit
+= render "layouts/header"
+.posts_edit{class:"posts_new"}
   %h2 投稿編集
-  = render @post ,son_model: @post.tags
+  = render @post
 

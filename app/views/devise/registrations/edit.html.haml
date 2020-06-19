@@ -4,8 +4,8 @@
 .devise_common
   .devise_common-title
     %h2 Edit #{resource_name.to_s.humanize}
-  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
     = render "devise/shared/error_messages", resource: resource
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
     .field
       = f.label :nickname
       %br/
@@ -20,7 +20,10 @@
     .field.field-image
       %p Profile image
       = f.label :image do
-        = image_tag current_user.image.to_s, class:"file_image"
+        - if current_user.image.attached?
+          = image_tag current_user.image, class:"file_image"
+        - else
+          = image_tag "default.jpg", class:"file_image"
         = f.file_field :image, autofocus: true, autocomplete: "image", class: "image_file"
     .field
       = f.label :text

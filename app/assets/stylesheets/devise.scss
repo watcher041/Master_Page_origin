@@ -13,10 +13,10 @@
     }
   }
   > form {
-      @include position-center;
+      @include position_center;
       flex-direction: column;
       width:50%;
-    > .field {
+    & .field {
         width:100%;
       & input,textarea {
         width:100%;
@@ -25,18 +25,12 @@
         margin-bottom: 30px;
       }
      &-image {
-         @include image_base_size;
          margin-bottom:50px;
+         @include position_center;
+         flex-direction: column;
        > label{
-          display: block;
-          height:100%;
-          width:100%;
-          border:3px dotted;
-          @include position_center;
-          > img {
-            max-width: 100%;
-            max-height: 100%;
-          }
+            @include image_base_size;
+            border:3px dotted;
           &:hover {
             color:red;
           }

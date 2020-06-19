@@ -1,17 +1,19 @@
 
 class FieldsController < ApplicationController
 
+  def index
+    @fields = Field.where(ancestry:nil)
+  end
+
   def show
-
-    @fields = Field.find(params[:id]).children
-
+    @field = Field.find(params[:id])
+    @children = @field.children
     respond_to do |format|
-      format.html{}
+      format.html
       format.json{
-        render json: @fields
+        render json: @children
       }
     end
-
   end
 
 end
